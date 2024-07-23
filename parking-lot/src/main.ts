@@ -32,19 +32,19 @@ for( let i=0;i < 4;  i++) {
     parkingLot.addExitGate(new ExitGate());
 }
 
-
+//Vehicle for parking 
 const vehicle = VehicleFactory.create(
     VehicleType.CAR,
     'ABCD',
     '8989898989'
 );
-
+//one entry gate 
 const entryGate = parkingLot.entryGates[0]
 const ticket  = entryGate.getParkingTicket(vehicle);
 
 // get exit gate
-
 const exitGate = parkingLot.exitGates[0]
 exitGate.checkout(ticket)
+exitGate.payment(ticket)
 
 

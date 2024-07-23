@@ -1,6 +1,7 @@
 import { ParkingFloor } from "./parking.floor"
 import ParkingLot from "./parking.lot"
 import { ParkingTicket } from "./parking.ticket"
+import { Payment } from "./payments/payment"
 import { Vehicle } from "./vehicle/vehicle"
 
 
@@ -35,5 +36,7 @@ export class ExitGate {
     }
     payment(ticket:ParkingTicket) {
         //Payment Flow
+        const payment = new Payment('cash',ticket.amount)
+        payment.executePayment()
     }
 }
